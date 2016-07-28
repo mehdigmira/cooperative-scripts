@@ -3,4 +3,10 @@ from __future__ import unicode_literals, division
 
 
 def run():
-    print "I'm here"
+    while True:
+        x = (yield)
+        if x is None:
+            x = 0
+        if x > 10:
+            break
+        yield x + 1

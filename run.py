@@ -14,5 +14,17 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='run cooperative code')
     parser.add_argument('file_path', metavar='file_path', type=str, help='file to run')
     args = parser.parse_args()
-    import_function(args.file_path)
+    contained_module = imp.load_source('contained', args.file_path)
+    func = contained_module.run()
+    func.next()
+    x = None
+    while True:
+        # saved_stuff = func.next()
+        # func.next()
+        x = func.send(x)
+        func.next()
+        print x
+        # func.next()
+        # print saved_stuff
+
 
