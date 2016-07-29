@@ -6,7 +6,7 @@ Not the best way to solve this problem, but I find generators a very elegant way
 
 Sometimes, I have to run a lot of tasks on a remote server. To avoid hammering the server and disrupting its normal workflow, I would usually write a script that looks like this:
 
-```
+```python
 def run():
   huge_list_of_tasks = fetch_task_ids_from_db()
   for task in huge_list_of_tasks:
@@ -44,7 +44,7 @@ The script will then be reloaded and resumed from where it stoped.
 
 # Example
 ```
-data_init = range(20)
+data_init = range(10)
 
 def run():
     while True:
