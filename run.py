@@ -6,9 +6,8 @@ import imp
 from time import sleep
 
 
-def run_remote(data=None):
+def run_remote(data=None, func=None):
     try:
-        func = imp.load_source('contained', args.file_path).run()
         func.next()
         while True:
             data = func.send(data)
@@ -24,7 +23,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     data = None
     while True:
-        data = run_remote(data)
+        data = run_remote(data, func=imp.load_source('contained', args.file_path).run())
         if data is StopIteration:
             print 'byebye'
             break
