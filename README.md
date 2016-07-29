@@ -19,7 +19,7 @@ The script exposed in the repo uses generators to solve this problem.
 
 The previous example would be re-written like this:
 
-```
+```python
 def run():
     while True:
         data = (yield)  # get data from storage
@@ -43,7 +43,7 @@ If I want to switch from a 10s to a 5s sleep interval, I would just change sleep
 The script will then be reloaded and resumed from where it stoped.
 
 # Example
-```
+```python
 data_init = range(10)
 
 def run():
