@@ -15,8 +15,9 @@ def run():
             break
 
         # Logic goes here
-        print data
+        data += 1
+        print 'that is ', data
         sleep(2)
         ###
 
-        yield data + 2  # save data
+        yield data  # save data
